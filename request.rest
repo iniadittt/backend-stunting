@@ -1,11 +1,11 @@
 ###
 
-GET http://localhost:3000/
+GET http://localhost:5000/
 Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/predict
+POST http://localhost:5000/predict
 Content-Type: application/json
 
 {
@@ -17,12 +17,12 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/anak
+GET http://localhost:5000/anak
 Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/anak
+POST http://localhost:5000/anak
 Content-Type: application/json
 
 {
@@ -33,17 +33,17 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/history
+GET http://localhost:5000/history
 Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/history/1
+GET http://localhost:5000/history/1
 Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/history
+POST http://localhost:5000/history
 Content-Type: application/json
 
 {

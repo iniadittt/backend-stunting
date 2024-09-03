@@ -3,18 +3,18 @@ steps:
     args: 
       - 'build'
       - '-t'
-      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/bjir-artifact/stunting:$COMMIT_SHA'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/stuntingbe/stunting:$COMMIT_SHA'
       - '.'
   - name: gcr.io/cloud-builders/docker
     args:
       - 'push'
-      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/bjir-artifact/stunting:$COMMIT_SHA'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/stuntingbe/stunting:$COMMIT_SHA'
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'backend-stunting'
-      - '--image=asia-southeast2-docker.pkg.dev/$PROJECT_ID/bjir-artifact/stunting:$COMMIT_SHA'
+      - '--image=asia-southeast2-docker.pkg.dev/$PROJECT_ID/stuntingbe/stunting:$COMMIT_SHA'
       - '--region=us-central1'
       - '--cpu=1'
       - '--memory=1024Mi'
@@ -23,5 +23,5 @@ steps:
       - '--allow-unauthenticated'
       - '--set-secrets=DATABASE_URL=database_url_stunting:latest,GCP_BUCKET_NAME=gcp_bucket_name:latest'
 images:
-  - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/bjir-artifact/stunting:$COMMIT_SHA'
-logsBucket: 'gs://bucket-adit/logs'
+  - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/stuntingbe/stunting:$COMMIT_SHA'
+logsBucket: 'gs://bucket-stunting/logs'

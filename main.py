@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 load_dotenv()
 
 parsed_url = urlparse(os.getenv('DATABASE_URL'))
-
+print(parsed_url)
 host = parsed_url.hostname
 user = parsed_url.username
 password = parsed_url.password
@@ -105,6 +105,7 @@ def get_anak():
         cur = mysql.connection.cursor()
         cur.execute('''SELECT * FROM anak''')
         data = cur.fetchall()
+        print(data)
         cur.close()
         if not data:
             return jsonify({
